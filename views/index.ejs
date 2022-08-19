@@ -6,15 +6,44 @@
     	<meta name="description" content="Your description goes here">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Blank Template</title>
-    <h1>This is a test</h1>
-
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../public/css/normalize.css">
+		<link rel="stylesheet" href="../public/css/style.css">
 	</head>
 	<body>
+		<h1>Welcome to the arena!</h1>
+			<fieldset class="createChar">
+				<legend>Create a fighter</legend>
+		
+					<form action="/" method="POST">
+						<label>Fighter Name:
+							<input type="text" name="fighterName" required></input>
+						</lable>
 
-		<script type="text/javascript" src="js/main.js"></script>
+						<label>
+							Fighter HP:
+							<input type="number" min="1" name="fighterHP"></input>
+						</label>
+
+						<label>
+							Fighter attack:
+							<input type="number" min="1" name="fighterAttack"></input>
+						</label>
+
+						<label>
+							Description:
+							<textarea name="fighterDesc"></textarea>
+						</label>
+
+						<button type="submit" name="submit">Add fighter to the roster</button>
+					</form>
+			</fieldset>
+
+			<h2>The Roster</h2>
+			<div class="roster">
+					
+			</div>
+
+		<script type="text/javascript" src="../public/js/main.js"></script>
 	</body>
 </html>
