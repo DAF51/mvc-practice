@@ -13,7 +13,7 @@ const character = new mongoose.Schema({
      type: Number,
      required: true
   },
-  description:{
+  desc:{
     type: String,
     required: false
   }
