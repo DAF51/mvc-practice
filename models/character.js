@@ -5,7 +5,11 @@ const character = new mongoose.Schema({
     type: String,
     required: true
   }, 
-  HP: {
+  maxHP: {
+    type: Number,
+    required: true
+  },
+  currentHP:{
     type: Number,
     required: true
   },
@@ -16,7 +20,11 @@ const character = new mongoose.Schema({
   desc:{
     type: String,
     required: false
-  }
+  },
+  alive: {
+    type: Boolean,
+    required: true
+  },
 })
 
 module.exports = mongoose.model("Character", character)

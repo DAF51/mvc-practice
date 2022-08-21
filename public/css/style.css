@@ -59,10 +59,27 @@ input, textarea{
      margin: 10px
 }
 
-div.roster{
+div.roster, div.graveyard{
+     display: flex;
      margin: 10px auto;
-     width:500px;
-     border: 5px solid black
+     width:50%;
+     flex-flow: row wrap
+     /* border: 5px solid black; */
+}
+
+div.character{
+     border: 2px solid black;
+     margin: auto;
+     padding: 5px 10px;
+     max-width: 33%;
+}
+
+ul.charAttributes {
+     padding: 0px;
+}
+
+ul.charAttributes li{
+     list-style: none;
 }
 
 /******************************************

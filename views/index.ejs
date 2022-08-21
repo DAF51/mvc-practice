@@ -32,7 +32,7 @@
 
 						<label>
 							Description:
-							<textarea name="fighterDesc"></textarea>
+							<textarea name="fighterDesc" maxlength="50" placeholder="50 characters max"></textarea>
 						</label>
 
 						<button type="submit" name="submit">Add fighter to the roster</button>
@@ -41,7 +41,37 @@
 
 			<h2>The Roster</h2>
 			<div class="roster">
-					
+				<% roster.forEach(character => {  %>
+						<div class="character" data-id=<%=character._id %> data-maxhp=<%=character.maxHP%> data-att=<%=character.att%> data-currenthp=<%character.currentHP%>>
+							<ul class="charAttributes">
+								<li>Name: <%=character.name%></li>
+								<li class="HP">HP: <%=character.currentHP%>/<%=character.maxHP%></li>
+								<li>Attack: <%=character.ATT%></li>
+								<li>Description: <%=character.desc%></li>
+							</ul>
+							<button class="delete">Delete</button> 
+							<% if(character.currentHP < character.maxHP) { %>
+								<button class="heal">Heal</button>
+							<% } %>
+						</div>
+					<% }) %>
+
+			</div>
+
+			<h2>The Graveyard</h2>
+			<div class="graveyard">
+				<% grave.forEach(character => {  %>
+						<div class="character" data-id=<%=character._id %> data-maxhp=<%=character.maxHP%>>
+							<ul class="charAttributes">
+								<li>Name: <%=character.name%></li>
+								<li>HP: <%=character.currentHP%>/<%=character.maxHP%></li>
+								<li>Attack: <%=character.ATT%></li>
+								<li>Description: <%=character.desc%></li>
+							</ul>
+							<button class="delete">Delete</button> 
+							<button class="heal">Revive</button>
+						</div>
+				<%	})  %>
 			</div>
 
 		<script type="text/javascript" src="../js/main.js"></script>
