@@ -52,3 +52,7 @@ async function healFighter(){
       console.log(err)
   }
 }
+
+async function fight(){
+// Have to figure out how to make the fight code work
+}

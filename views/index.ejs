@@ -12,32 +12,26 @@
 	</head>
 	<body>
 		<h1>Welcome to the arena!</h1>
-			<fieldset class="createChar">
-				<legend>Create a fighter</legend>
-		
-					<form action="/" method="POST">
-						<label>Fighter Name:
-							<input type="text" name="fighterName" required></input>
-						</lable>
-
-						<label>
-							Fighter HP:
-							<input type="number" min="1" name="fighterHP"></input>
-						</label>
-
-						<label>
-							Fighter attack:
-							<input type="number" min="1" name="fighterAttack"></input>
-						</label>
-
-						<label>
-							Description:
-							<textarea name="fighterDesc" maxlength="50" placeholder="50 characters max"></textarea>
-						</label>
-
-						<button type="submit" name="submit">Add fighter to the roster</button>
-					</form>
-			</fieldset>
+		<h2>Choose your fighters!</h2>
+		<div class="fightPit">
+			<div class ="selectScreen">
+				Fighter One: <select>
+					<option selected disabled>Choose a fighter</option>
+					<% roster.forEach(character => { %>
+						<option data-id=<%=character._id%>><%=character.name%></option>
+					<%})%>
+				</select>
+				<h3> VS </h3>
+				Fighter Two: <select>
+					<option selected disabled>Choose a fighter</option>
+					<% roster.forEach(character => { %>
+						<option data-id=<%=character._id%>><%=character.name%></option>
+					<%})%>
+				</select>
+			</div>
+			<button class="fight">FIGHT</button>
+			<!-- Have to figure out how to make the fight code work -->
+		</div>
 
 			<h2>The Roster</h2>
 			<div class="roster">
@@ -73,6 +67,34 @@
 						</div>
 				<%	})  %>
 			</div>
+
+			<fieldset class="createChar">
+
+				<legend>Create a fighter</legend>
+		
+					<form action="/" method="POST">
+						<label>Fighter Name:
+							<input type="text" name="fighterName" required></input>
+						</lable>
+
+						<label>
+							Fighter HP:
+							<input type="number" min="1" name="fighterHP"></input>
+						</label>
+
+						<label>
+							Fighter attack:
+							<input type="number" min="1" name="fighterAttack"></input>
+						</label>
+
+						<label>
+							Description:
+							<textarea name="fighterDesc" maxlength="50" placeholder="50 characters max"></textarea>
+						</label>
+
+						<button type="submit" name="submit">Add fighter to the roster</button>
+					</form>
+			</fieldset>
 
 		<script type="text/javascript" src="../js/main.js"></script>
 	</body>
